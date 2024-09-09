@@ -119,7 +119,7 @@ view: focus {
         SUM(CAST(c.amount AS NUMERIC))
       FROM
         UNNEST(usage_cost_data.credits) AS c), 0) AS BilledCost,
-    "TODO - replace with the billing account ID in your detailed usage export table name" AS BillingAccountId,
+    "001B3A_4E8155_237EF3" AS BillingAccountId,
     usage_cost_data.currency AS BillingCurrency,
     PARSE_TIMESTAMP("%Y%m", invoice.month, "America/Los_Angeles") AS BillingPeriodStart,
     TIMESTAMP(DATE_SUB(DATE_ADD(PARSE_DATE("%Y%m", invoice.month), INTERVAL 1 MONTH), INTERVAL 1 DAY), "America/Los_Angeles") AS BillingPeriodEnd,
